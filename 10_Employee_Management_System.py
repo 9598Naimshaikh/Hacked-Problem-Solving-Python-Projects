@@ -81,3 +81,19 @@ comp1.search_employee(555)
 
 # Calculating and displaying the total salary
 comp1.total_salary()
+
+
+
+
+
+# if __name__ == '__main__':
+#     print('...Welcome to Google Company...')
+#     while True:
+#         print('Option-----')
+#         print('1. ADD EMPLOYEES \n2. REMOVE EMPLOYEES \n3. SEARCH EMPLOYEES \n4. CALCULATE THE ALL EMPLOYEES SALARY '
+#               '\n5. QUIT THE PROGRAM \n')
+#
+#         user_choice = int(input('Enter choice (1,2,3,4,5) $: '))
+#         if user_choice == 1:
+#
+#         break
