@@ -100,3 +100,49 @@ print(list(cube_num))
 # total = reduce(lambda x, y: x + y, list1)
 # print(total)
 
+
+## Factorial Number: ....
+# def factorial_num(num):
+#     return 1 if(num == 0 or num == 1) else num * factorial_num(num-1)
+#
+#
+# print(factorial_num(n := int(input('Enter a number: '))))
+
+"""
+def factorial_num(num):
+    if num < 0:
+        return 'Invalid input.! Please enter a positive number.'
+    elif num == 0 or num == 1:
+        return 1
+    else:
+        return num * factorial_num(num-1)
+
+
+if __name__ == "__main__":
+    num = int(input('Enter a number: '))
+    print(factorial_num(num))
+
+"""
+
+
+# def factorial(num):
+#     if num < 0:
+#         return "Invalid input.! Please enter a positive number."
+#     elif num == 0 or num == 1:
+#         return 1
+#     else:
+#         fact = 1
+#         while num > 1:
+#             fact *= num
+#             num -= 1
+#         return fact
+#
+#
+# if __name__ == "__main__":
+#     n = int(input('Enter a num: '))
+#     print(factorial(n))
+
+
+
+
+
