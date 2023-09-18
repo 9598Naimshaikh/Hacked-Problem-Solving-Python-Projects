@@ -75,7 +75,6 @@ cube_num = map(lambda x: x * x * x, num)
 print(list(cube_num))
 """
 
-
 # filter....
 # l = [2, 4, 6, 7, 3, 9, 12, 10]
 #
@@ -124,7 +123,6 @@ if __name__ == "__main__":
 
 """
 
-
 # def factorial(num):
 #     if num < 0:
 #         return "Invalid input.! Please enter a positive number."
@@ -143,6 +141,141 @@ if __name__ == "__main__":
 #     print(factorial(n))
 
 
+# Question: Implement a Stack Using a Linked List
+'''
+class Stack:
+
+    def __init__(self):
+        self._items = []
+
+    def push(self, data):
+        """Adds an element with the given data to the top of the stack."""
+        self._items.append(data)
+
+    def pop(self):
+        """Removes and returns the top element from the stack. If the stack is empty, return None."""
+        return self._items.pop()
+
+    def is_empty(self):
+        """Returns True if the stack is empty, otherwise returns False."""
+        if not self._items:
+            return True
+        else:
+            return False
+
+    @property
+    def items(self):
+        return self._items
 
 
+stack1 = Stack()
 
+stack1.push(34)
+stack1.push("Naim")
+stack1.push(89.80)
+
+print(stack1.pop())
+print(stack1.items)
+
+print(stack1.is_empty())
+'''
+
+# simple Calculator Program
+'''
+def add():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    print(f"Result: {num1} + {num2} = {num1 + num2}")
+
+
+def sub():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    print(f"Result: {num1} - {num2} = {num1 - num2}")
+
+
+def multiply():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    print(f"Result: {num1} * {num2} = {num1 * num2}")
+
+
+def divide():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    print(f"Result: {num1} / {num2} = {num1 / num2}")
+
+
+if __name__ == "__main__":
+    print("Simple Calculator")
+
+    while True:
+        try:
+            print("------------------")
+            print("\n1. Addition \
+            \n2. Subtraction \
+            \n3. Multiplication \
+            \n4. Division \
+            \n5. Quit\n")
+
+            user_choice = int(input('Enter your choice $: '))
+
+            if user_choice == 1:
+                add()
+            elif user_choice == 2:
+                sub()
+            elif user_choice == 3:
+                multiply()
+            elif user_choice == 4:
+                divide()
+            elif user_choice == 5:
+                print("GoodBye!")
+                break
+        except Exception as e:
+            print(e)
+'''
+
+# import re
+#
+#
+# def strong_password_checker(password):
+#     if len(password) < 8:
+#         return "Weak password! Password should be at least 8 characters."
+#
+#     if not re.search(r"[A-Z]", password):
+#         return "Weak password! Password should be contain at least one capital letter"
+#
+#     if not re.search(r"[a-z]", password):
+#         return "Weak password! Password should be contain at least one lowercase letter."
+#
+#     if not re.search(r"[0-9]", password):
+#         return 'Weak password! Password should be contain at least one digit (0-9).'
+#
+#     if not re.search(r"[!@#$%^*()_+~`;.,<>/?{}|]", password):
+#         return "Weak password! Password should be contain at least one special character."
+#
+#     return "Strong Password"
+#
+#
+# if __name__ == "__main__":
+#     password = input('Enter Password $: ')
+#     print(strong_password_checker(password))
+
+
+import re
+
+password = input('Enter a Password: ')
+
+
+def password_strength_checker(password):
+    if len(password) < 8:
+        return 'Weak Password! Password should be at least 8 characters.'
+
+    if not re.search(r'[A-Z]', password):
+        return 'Weak Password! Password should be at least one uppercase letters.'
+
+    return 'Strong Password'
