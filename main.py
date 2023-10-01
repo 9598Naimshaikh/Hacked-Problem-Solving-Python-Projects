@@ -266,16 +266,125 @@ if __name__ == "__main__":
 #     print(strong_password_checker(password))
 
 
+"""
+import string
+import random
 import re
-
-password = input('Enter a Password: ')
 
 
 def password_strength_checker(password):
     if len(password) < 8:
-        return 'Weak Password! Password should be at least 8 characters.'
+        return "Weak password! Password should be minimum 8 characters long."
 
     if not re.search(r'[A-Z]', password):
-        return 'Weak Password! Password should be at least one uppercase letters.'
+        return 'Weak password! Password should be contain at least one uppercase letter.'
 
-    return 'Strong Password'
+    if not re.search(r'[a-z]', password):
+        return 'Weak password! Password should be contain at least one lowercase letter.'
+
+    if not re.search(r'[0-9]', password):
+        return 'Weak password! Password should be contain at least one digit (0-9).'
+
+    if not re.search(r'[!"#$%&()*+,-./:;<=>?@[\]^_`{|}~]', password):
+        return 'Weak password! Password should be contain at least one special character.'
+
+    return f'Strong Password: {password}'
+
+
+def random_pass_gen():
+    str_upper = string.ascii_uppercase
+    str_lower = string.ascii_lowercase
+    digit = string.digits
+    special_character = string.punctuation
+
+    password = []
+
+    password.extend(list(str_lower))
+    password.extend(list(str_upper))
+    password.extend(list(digit))
+    password.extend(list(special_character))
+
+    password_length = int(input("Enter password length: "))
+
+    random.shuffle(password)
+    password = "".join(password[0:password_length])
+    # print(password)
+    print(password_strength_checker(password))
+
+
+if __name__ == "__main__":
+    random_pass_gen()
+"""
+
+
+# Todo: Question: Write a Python function called reverse_string that takes a string as input and returns the reversed
+#  version of that string.
+
+# def reverse_string(text):
+#     reverse_word = text[::-1]
+#     return reverse_word
+#
+#
+# if __name__ == "__main__":
+#     user_text = input("Enter a word which do you want to reverse: ")
+#     print(reverse_string(user_text))
+
+
+# Todo: Prime number checker
+# def prime_num(num):
+#     if num <= 1:
+#         return "Not Prime number"
+#     for i in range(2, int(num ** 0.5) + 1):
+#         if num%i == 0:
+#             return "Not Prime number"
+#     return "Prime Number"
+#
+#
+# if __name__ == "__main__":
+#     number = int(input('enter numb: '))
+#     print(prime_num(number))
+
+
+# Todo: Problem: Find the Sum of Digits
+#
+# Write a Python function that takes an integer as input and calculates the sum of its digits.
+#
+# For example:
+#
+# Input: 12345
+# Output: 15 (1 + 2 + 3 + 4 + 5)
+"""
+def sum_of_digits(n):
+    return sum(int(digit) for digit in str(abs(n)))
+
+
+# Test the function
+num = int(input("Enter an integer: "))
+result = sum_of_digits(num)
+print(f"The sum of digits in {num} is {result}")
+"""
+
+
+# number = int(input("Enter numbers: "))
+# num = str(abs(number))
+# total = 0
+# for n in num:
+#     total += int(n)
+# print(total)
+
+
+
+# Todo: Random Password Genrator using python.
+"""
+import random
+import string
+
+password_len = int(input("Enter password length: "))
+
+my_password = ""
+for i in range(password_len):
+    my_password += random.choice(string.printable)
+
+
+print(f"PASSWORD: {my_password}")
+"""
