@@ -1,15 +1,12 @@
-# Question: Implement a To-Do List
-
-# Create a simple command-line to-do list program in Python. Your program should allow users to perform the following
-# operations:
-
-# 1. Add a task: Users should be able to add tasks to their to-do list.
-# 2. View tasks: Users should be able to view their current to-do list.
-# 3. Mark a task as done: Users should be able to mark tasks as done or completed.
-# 4. Delete a task: Users should be able to delete tasks from their to-do list.
-
-# You should implement these operations using functions and a list to store the tasks.
-# Here's a sample interaction with the program:
+# Todo: Question: Implement a To-Do List
+#   Create a simple command-line to-do list program in Python. Your program should allow users to perform the following
+#   operations:
+#       1. Add a task: Users should be able to add tasks to their to-do list.
+#       2. View tasks: Users should be able to view their current to-do list.
+#       3. Mark a task as done: Users should be able to mark tasks as done or completed.
+#       4. Delete a task: Users should be able to delete tasks from their to-do list.
+#   You should implement these operations using functions and a list to store the tasks.
+#   Here's a sample interaction with the program:
 
 """
 To-Do List Program
@@ -54,21 +51,26 @@ Todo_List = []
 
 
 def add_task():
-    task = input('Enter a task which do you want to add: ')
+    task = input('Enter a task which do you want to add ✍️ $: ')
     Todo_List.append(task)
-    print('Task added successfully!')
+    print('Task added successfully!🎉🎊')
+    print("------------------------")
 
 
 def view_task():
     for index, task in enumerate(Todo_List, start=1):
         print(f'{index}. {task}')
 
+    print("------------------------")
+
 
 def mark_task_as_done():
     task_num = int(input("Enter the task number to mark as done: "))
     for index, task in enumerate(Todo_List, start=1):
         if task_num == index:
-            print(f'Task {task!r} marked as done!')
+            print(f'Task {task!r} marked as done!✅')
+
+    print("------------------------")
 
 
 def delete_task():
@@ -76,7 +78,9 @@ def delete_task():
     for index, task in enumerate(Todo_List, start=1):
         if task_num == index:
             Todo_List.remove(task)
-            print(f'Task {task!r} Deleted!')
+            print(f'Task {task!r} Deleted!❌')
+
+    print("------------------------")
 
 
 if __name__ == "__main__":
@@ -84,11 +88,10 @@ if __name__ == "__main__":
     while True:
         try:
             print('-------------------')
-            print('\n1. Add a task \
-            \n2. View tasks \
-            \n3. Mark a task as done \
-            \n4. Delete a task \
-            \n5. Quit \n')
+            options = ["Add a task", "View tasks", "Mark a task as done", "Delete a task", "Quit"]
+            for index, opt in enumerate(options, start=1):
+                print(f"{index}. {opt}")
+            print()
 
             user_choice = int(input('Enter choice $$: '))
 
@@ -107,5 +110,12 @@ if __name__ == "__main__":
             elif user_choice == 5:
                 print('GoodBye.!')
                 break
+
+            user_doitAgain = input("What do you want to play again ? (Yes/No)$: ").lower()
+            if user_doitAgain == 'no' or user_doitAgain == 'n':
+                print("Thanks for using Todo Program.")
+                print("Good Byy.!👋")
+                quit()
+
         except Exception as e:
             print(f"Error: {e}")
